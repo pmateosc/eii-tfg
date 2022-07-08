@@ -1,0 +1,63 @@
+\chapter{Introducción} \label{cap1}
+
+En este primer capítulo se expone la motivación y los antecedentes que han llevado a la realización del presente Trabajo Final de Grado. Se presentan igualmente los objetivos que se marcan y una breve explicación de la estructura de la memoria.
+
+\section{Motivación} \label{s1_1}
+Control, inteligencia y enjambre (\textit{Swarming} en inglés), aunque son términos aparentemente sin relación, lo que se puede obtener de su combinación es más valioso para su aplicación a la tecnología de lo que podemos imaginar.
+
+Cuando los egipcios empezaron a recolectar, hace 5000 años, la miel de los panales de las abejas, seguramente se quedarían maravillados por las celdas hexagonales y el efecto, en cierto modo hipnotizador, que tienen estos panales. A parte de su belleza visual, la ciencia tras esa forma de construir es más compleja. La primera razón tiene que ver con su metamorfosis, siendo el hexágono un cubículo adecuado para realizarla. Aunque sería mejor que fueran cilíndricos para esta actividad, perderían mucho espacio y emplearían más cera de la necesaria. Por último, esta forma hexagonal, aparte de optimizar la superficie útil, es la estructura más eficiente para repartir carga cuando está lleno de miel \cite{abejasecocolmena}. Otro ejemplo de modelo biológico de enjambre podemos encontrarlo en las hormigas y en su estrategia de comunicación a través de rastros de feromonas químicas, que utilizan para encontrar los caminos más cortos entre sus fuentes de alimentos y nidos.
+
+Es por esto que en las últimas dos décadas han aumentado considerablemente las investigaciones sobre \textit{swarming}, con el objetivo de dar respuesta a la metáfora social de los insectos, entender su distribución, sus interacciones, su flexibilidad y su solidez para resolver problemas \cite{bonabeau1999swarm}.
+
+Pero el campo de la inteligencia de enjambre se basa en gran medida en el conocimiento fragmentado y bajo este pretexto se pretende implementar un sistema de control a los modelos que más transcendencia han tenido en el estudio del comportamiento colectivo de animales para así ampliar su rango de utilidad en procesos robóticos actuales.
+
+\section{Antecedentes} \label{s1_2}
+Como se ha comentado en la sección anterior, \textit{swarming} es un término con connotaciones referentes al campo de biología utilizado también en el entorno de las matemáticas para explicar la organización autónoma que adquieren ciertos grupos de animales o insectos como abejas, hormigas, peces, pájaros y un largo etcétera como podremos ver a lo largo del trabajo. Los modelos que se van a estudiar toman como referencia las fuerzas de autopropulsión de los agentes (velocidad, aceleración) a lo cual añaden otros factores y parámetros a tener en cuenta como las interacciones entre ellos o las perturbaciones externas aleatorias, entre otros.
+
+Para conocer el origen de esta rama de las matemáticas, hay que remontarse a finales del siglo XX cuando se empieza a estudiar el movimiento colectivo de individuos de la mano de Aoki (ver \cite{aoki1982simulation}), basando sus estudios en la observación de un banco de peces. Aoki en este primer estudio parte de dos premisas principales: que la velocidad y dirección de cada individuo son variables estocásticas y que hay tres tipos de conductas diferentes: atracción, repulsión e imitación. Con esto llegó a la conclusión de que los movimientos grupales en la unidad podían ocurrir a pesar de carecer cada individuo del conocimiento del movimiento de todo el banco de peces. A raíz de este estudio se abren otras corrientes de trabajo relacionadas con el \textit{swarming} y el movimiento colectivo en animales. 
+
+Unos años más tarde, Vicsek (\citeyear{vicsek1995novel}) crea un primer modelo para explicar la evolución del movimiento de un sistema de agentes. En este modelo las partículas se accionan con una velocidad absoluta constante y en cada paso de tiempo cada una asume la dirección promedio de movimiento de su vecindario incluyendo una perturbación aleatoria ($\eta$) agregada. Su comportamiento analítico se estudió posteriormente en \cite{jadbabaie2003coordination} sentando las bases del trabajo posterior de Felipe Cucker y Steve Smale \cite{cucker2007emergent} que  en el año 2007 retoman la investigación centrándose, en esta ocasión, en bandadas de pájaros.
+
+En su estudio proporcionan un modelo que debe el nombre a sus autores: modelo de Cucker-Smale (ec.: \ref{eq:generalCSbeta}), válido tanto para tiempos continuos como para tiempos discretos, que describe la evolución del movimiento en dicha bandada en función de un parámetro $\beta$ del que dependerá la descomposición del grupo (alejamiento de las aves). Su trabajo se centra en la convergencia de los vectores velocidad de cada pájaro de la bandada dependiendo del parámetro de descomposición ($\beta$):
+
+\begin{equation}\label{eq:generalCSbeta} 
+    \left\lbrace
+    \begin{array}{ll}
+        \dot{x}_{i}(t)=v_{i}(t) \\
+        \dot{v}_{i}(t)= \displaystyle{\frac{1}{N}\sum_{j=1}^{N}\frac{v_{j}(t)-v_{j}(t)}{(1+||x_{j}(t)-x_{j}(t)||^2)^\beta}}
+    \end{array}
+    \right.
+\end{equation}
+
+Tras el estudio del modelo de Cucker-Smale, se aplican técnicas matemáticas de control \cite{canizo2010collective}, \cite{caponigro2015sparse} para optimizarlo con objetivos diferentes como pueden ser que los vectores de velocidad tiendan a la igualdad en el menor tiempo posible o con el menor gasto energético posible, como es el caso de lo que proponen Trèlat et al. \cite{caponigro2015sparse}. En el presente trabajo se crearán estos modelos computacionalmente mediante Matlab\textregistered\space para simular los resultados, compararlos y obtener los valores de $\beta$ óptimos dependiendo del objetivo.
+
+\section{Objetivos}\label{s1_3}
+En un campo de estudio tan amplio y en pleno auge como es el \textit{swarming} se pretende en el presente trabajo entender los contextos en los que puede ser útil estos modelos así como aprender a controlarlos y por último demostrar la utilidad de cada modelo de control de swarming. Por tanto, bajo estas premisas podemos definir los siguientes objetivos:
+
+\newlist{objetivos}{enumerate}{1}
+\setlist[objetivos, 1]
+{label=O\arabic{objetivosi}. %O1., O2., O3., ...
+}
+\begin{objetivos}
+    \item Hacer un estudio exhaustivo del estado del arte del concepto \textit{swarming}.
+    \item Comprender la evolución de \textit{swarming}, su utilidad en diversos campos de la ciencia y la importancia en la actualidad
+    \item Conocer los modelos de comportamiento colectivo más importantes, centrándose en el modelo de Cucker Smale.
+    \item Estudiar así mismo variaciones del modelos de Cucker Smale, que incluyan alguna forma de control.
+    \item Reproducir el comportamiento descrito por los modelos anteriores.
+    \item Reproducir las diferencias en el comportamiento descrito por el modelo de Cucker-Smale en función del parámetro de convergencia.
+    \item Conocer cómo aplicar algoritmos de control diferentes al modelo de Cucker Smale para entender el modelo de Trèlat. 
+    \item Comparar las variantes del modelo que propone Trèlat.
+\end{objetivos}
+
+
+\section{Estructura de la memoria}\label{s1_4}
+En este capítulo hemos visto la motivación y los antecedentes que han llevado a la realización de este Trabajo Fin de Grado así como los objetivos que se persiguen en este estudio. El resto del documento se estructura de la siguiente manera:
+
+\begin{description}
+    \item[\autoref{cap2}] En este capítulo se explica detalladamente el significado del término \textit{swarming}, su contexto, historia e impacto.
+    \item[\autoref{cap3}] Se profundiza en los estudios de Cucker Smale y su modelo así como en los modelos propuesto por Cañizo et al. y Trèlat et al.
+    \item[\autoref{cap4}] Se realizan simulaciones de cada modelo para compararlos entre ellos. 
+    \item[\autoref{ch:conclusiones}] Recopila las principales conclusiones del proyecto y comenta las líneas de trabajo futuro, en caso de que se contemplen.
+    \item[\autoref{a1}] Funciones y script realizados en matlab para la simulación de los modelos.
+    \item[\deschyperlink{ch:bibliografia}{Bibliografía}] Recopila las referencias bibliográficas utilizadas en este documento.
+\end{description}

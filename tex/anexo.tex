@@ -1,0 +1,50 @@
+\chapter{Código de Matlab} \label{a1}
+
+\section{Funciones} \label{a1_functions}
+Para poder realizar todas las simulaciones se han generado distintas funciones bajo la premisa de que puedan ser reutilizables para poder alimentarlas con una serie de parámetros referentes a la posición y dirección de cada elemento en un momento dado, y que cada una de las funciones ejerza el control del modelo al que hace referencia en cada caso.
+
+\subsection{Cucker Smale}\label{a1_1_CS}
+
+\lstinputlisting[language=Matlab,
+    caption=Función que simula comportamiento de Cucker Smale,
+    label=src:cs0
+]{tex/source_code/cs0.m}
+
+\subsection{CCR}\label{a1_2_CCR}
+\lstinputlisting[language=Matlab,
+    caption=Función que simula comportamiento según CCR,
+    label=src:cs_arbor
+]{tex/source_code/cs_arbor.m}
+
+\subsection{Trèlat 1}\label{a1_3_trelat1}
+\lstinputlisting[language=Matlab,
+    caption=Función que simula comportamiento de Trélat impulsando todos los individuos,
+    label=src:cs_trelat1
+]{tex/source_code/cs_trelat1.m}
+
+\subsection{Trèlat 2}\label{a1_4_trelat2}
+\lstinputlisting[language=Matlab,
+    caption=Función que simula comportamiento de Trélat impulsando un individuo,
+    label=src:cs_trelat2
+]{tex/source_code/cs_trelat2.m}
+
+\subsection{Obtener máxima diferencia de los vectores}\label{a1_5_max_dif}
+\lstinputlisting[language=Matlab,
+    caption=Función que extrae el vector más alejado de cada modelo,
+    label=src:max_dif
+]{tex/source_code/dibujar_max_dif.m}
+
+\section{Scripts} \label{a2_scripts}
+\subsection{Comparativa de los 4 modelos}\label{a2_1}
+\lstinputlisting[language=Matlab,
+    caption=Script que compara el el comportamiento de las diferentes funciones,
+    label=src:comparativa
+]{tex/source_code/comparativa.m}
+
+\subsection{Repetición masiva de pruebas}\label{a2_2}
+\lstinputlisting[language=Matlab,
+    caption=Script que repite 500 veces cada comparación,
+    label=src:comparativa_500
+]{tex/source_code/comparativa_noh_tc.m}
+
+
