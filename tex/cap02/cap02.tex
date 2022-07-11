@@ -35,7 +35,7 @@ Las abejas por su parte, organizan sus colmenas en paralelo formando cadenas que
 
 Estos tipos anteriormente descritos de comportamiento en insectos sociales son referentes a la organización de las tareas del grupo, en función de las características de cada individuo con una finalidad clara de mejorar la productividad. Se pueden leer más ejemplos de insectos sociales en las referencias \cite{csahin2004swarm,robinson1992regulation}. 
 
-Existe otro tipo de comportamiento colectivo, que hace referencia a la dinámica del grupo que se observa en bandadas de pájaros, manadas de animales o bancos de peces, entre otros. Éste hace referencia al comportamiento individual de cada animal que les permita coordinar sus movimientos en relación a los demás integrantes del grupo. Existen numerosos artículos y estudios sobre el comportamiento de los peces y la formación de bancos de peces (\textit{Schooling})\footnote{Según I. Aoki: ``Resultado de las interacciones en las que un individuo controla su movimiento en relación con los vecinos y, al mismo tiempo, influye en estos vecinos"} dependiendo de diferentes factores externos. Una pequeña muestra de artículos relacionados con esta rama de estudio son \cite{aoki1982simulation, Aoki1984experimental,hall1910hidden,partridge1980sensory,partridge1980three,Pitcher963blindfish,youseff2008parallel}. 
+Existe otro tipo de comportamiento colectivo, que hace referencia a la dinámica del grupo que se observa en bandadas de pájaros, manadas de animales o bancos de peces, entre otros. Éste hace referencia al comportamiento individual de cada animal que les permita coordinar sus movimientos en relación a los demás integrantes del grupo. Existen numerosos artículos y estudios sobre el comportamiento de los peces y la formación de bancos de peces (\textit{schooling})\footnote{Según I. Aoki: ``Resultado de las interacciones en las que un individuo controla su movimiento en relación con los vecinos y, al mismo tiempo, influye en estos vecinos"} dependiendo de diferentes factores externos. Una pequeña muestra de artículos relacionados con esta rama de estudio son \cite{aoki1982simulation, Aoki1984experimental,hall1910hidden,partridge1980sensory,partridge1980three,Pitcher963blindfish,youseff2008parallel}. 
 
 Aoki, en su artículo \cite{aoki1982simulation} estudia el comportamiento de cada individuo del banco en función de la distancia del vecino más cercano. Para ello, basó sus estudios en un principio de la organización de los bancos de peces que estableció Edward T. Hall \cite{hall1910hidden}, según el cual el comportamiento depende tanto de la distancia personal como de la distancia social y se encontró con que los movimientos grupales podrían ocurrir a pesar de que cada individuo careciese de conocimiento del movimiento de todo el banco y en ausencia de un líder consistente. Esto podía ocurrir si individualmente llevaban a cabo tanto un movimiento de aproximación que permitiera la agregación como un movimiento de orientación paralela para que el banco mantuviera la cohesión.
 
@@ -61,6 +61,8 @@ Los estudios que se han hecho hasta el momento han sido en condiciones muy artif
 \begin{spacing}{0.5}
     \small{
     \begin{table}[t]%[h!]
+    \caption{Tabla de Reynolds comparativa de los diferentes estudios}
+        \label{tab:tablaRaynolds}
         \begin{tabularx}{1\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X} 
             \hline
             Referencia & Tamaño de la población & Orientación de partida & Velocidad & ¿Consenso?\\  
@@ -81,8 +83,6 @@ Los estudios que se han hecho hasta el momento han sido en condiciones muy artif
             \hline
             
         \end{tabularx}
-        \caption{Tabla de Reynolds comparativa de los diferentes estudios}
-        \label{tab:tablaRaynolds}
     \end{table}
     }
 \end{spacing}
@@ -93,7 +93,7 @@ Los estudios que se han hecho hasta el momento han sido en condiciones muy artif
 
 \subsection{Auto-organización en la robótica} \label{s2_1_2}
 
-La estructura organizativa que tienen los animales vistos hasta ahora tiene un gran beneficio si lo aplicamos a los enjambres de robots \footnote{\textit{Swarm robotics}: La robótica de enjambre es el estudio del diseño de un gran número de agentes físicos relativamente simples de modo que el comportamiento colectivo deseado surja de las interacciones locales entre los propios agentes y entre los agentes y el medio ambiente.\cite{csahin2004swarm}}. Hoy en día cada vez son más las tareas que tienden a automatizarse y para muchas de ellas son necesarios un grupo de robots. Además, las propiedades que caracterizan un sistema auto-organizado, como la escalabilidad, la flexibilidad y la robustez, también son muy deseables para un enjambre de robots autónomos. Es debido a esta creciente importancia que este enfoque merece ser explicado. En \cite{christian2008swarm} los autores introducen un estudio de este concepto antes de presentamos una breve revisión de la investigación en robótica de enjambres a lo largo de cuatro ejes: diseño, modelado y análisis, robots y problemas.
+La estructura organizativa que tienen los animales vistos hasta ahora tiene un gran beneficio si lo aplicamos a los enjambres de robots \footnote{\textit{Swarm robotics}: La robótica de enjambre es el estudio del diseño de un gran número de agentes físicos relativamente simples de modo que el comportamiento colectivo deseado surja de las interacciones locales entre los propios agentes y entre los agentes y el medio ambiente.\cite{csahin2004swarm}}. Hoy en día cada vez son más las tareas que tienden a automatizarse y para muchas de ellas son necesarios un grupo de robots. Además, las propiedades que caracterizan un sistema auto-organizado, como la escalabilidad, la flexibilidad y la robustez, también son muy deseables para un enjambre de robots autónomos. Es debido a esta creciente importancia que este enfoque merece ser explicado. En \cite{christian2008swarm} los autores introducen un estudio de este concepto antes de presentar una breve revisión de la investigación en robótica de enjambres a lo largo de cuatro ejes: diseño, modelado y análisis, robots y problemas.
 
 Son las tres características mencionadas anteriormente las que usa como nexo de unión entre la auto-organización aplicada a la biología y a la robótica: 
 
@@ -107,7 +107,7 @@ A estas características los autores añaden otras que debe tener el enjambre co
 
 Una vez sentadas las bases teóricas sobre las características que deben tener un enjambre de robots, \citeauthor{christian2008swarm} recorren lo que ellos consideran son las líneas de investigación para poder desarrollarlo. 
 
-En cuanto al diseño, agrupa los estudios en en función de si lo que se busca es que cumpla una funcionalidad o \textit{ad-hoc} o que se diseñe en base a unos principios. Un diseño ad-hoc asume implícitamente que el enjambre el grupo de robots va a tener un comportamiento similar a los insectos o animales utilizados como inspiración. En el diseño basado en principios en lugar de diseñar un comportamiento específico a nivel de enjambre, se utiliza una metodología general a través de la cual se pueden usar los comportamientos deseados a nivel de enjambre para construir los comportamientos individuales necesarios.
+En cuanto al diseño, agrupa los estudios en función de si lo que se busca es que cumpla una funcionalidad o \textit{ad-hoc} o que se diseñe en base a unos principios. Un diseño ad-hoc asume implícitamente que el enjambre o grupo de robots va a tener un comportamiento similar a los insectos o animales utilizados como inspiración. En el diseño basado en principios en lugar de diseñar un comportamiento específico a nivel de enjambre, se utiliza una metodología general a través de la cual se pueden usar los comportamientos deseados a nivel de enjambre para construir los comportamientos individuales necesarios.
 
 Otra linea de investigación es el modelado y análisis, para lo cual divide 3 tipos diferentes de modelado. El primero, basado en sensores, es utilizado principalmente para construir simuladores realistas de sistemas robóticos y nos permite realizar experimentos en simulación y así obtener resultados que se aproximan en mayor medida con los obtenidos de los robots físicos. En segundo lugar, existe el modelado microscópico que tiene en cuenta las características del entorno, la forma física y el control del comportamiento de los robots de tal manera que a la vez que simula las interacciones individuales dentro del sistema, también es capaz de adaptar los estados individuales en el tiempo. Por último, el modelado macroscópico simula el comportamiento de unas cantidades medias que representan el estado del sistema. Este último es común en física y química y es suficiente con resolverlos solo una vez para obtener el estado estacionario del modelo.
 
@@ -117,12 +117,10 @@ Esta última aplicación de enjambres de robots, aún se encuentra en una fase m
 
 
 \section{Modelos matemáticos} \label{s2_2}
-Para comprender el contexto de los modelos matemáticos que estudian el comportamiento colectivo, 
-
 Los modelos matemáticos que estudian el comportamiento colectivo encuentran una fuerte base en los modelos clásicos que han servido históricamente para estudiar el crecimiento de conjuntos de poblaciones.
 
 \subsection{Modelos clásicos poblacionales} \label{s2_2_1}
-En este apartado, hay 3 modelos clásicos que requieren una breve explicación:
+En este apartado, hay tres modelos clásicos que requieren una breve explicación:
 
 \subsubsection{Modelo de Malthus}
 En su artículo \cite{malthus1846ensayo} quería demostrar que nuestro crecimiento es insostenible y acabaría desembocando en una pauperización y en una economía de subsistencia, si no directamente en la extinción. Malthus utiliza el modelo de crecimiento exponencial del Carbono 14 para emular el crecimiento poblacional, es decir, cada año la población aumenta o disminuye un cierto tanto por uno $p$ respecto a lo que había el año anterior según la siguiente fórmula:
@@ -131,36 +129,42 @@ En su artículo \cite{malthus1846ensayo} quería demostrar que nuestro crecimien
     N_{k} = N_0\cdot C_k \quad \textrm{donde} \quad C = (1+\Delta tR_0)
 \end{equation}
 
-\noindent que si lo pasamos al modelo continuo haciendo tender $\Delta t -> 0$ queda:
+\noindent que si lo pasamos al modelo continuo haciendo tender $\Delta t \to 0$ queda:
 
 \begin{equation}
-    N'(t) = C \cdot N(t) => N(t) = N_0 \cdot e^{Ct}
+    N'(t) = C \cdot N(t) \Rightarrow N(t) = N_0 \cdot e^{Ct}
 \end{equation}
 
 \subsubsection{Modelo Logístico}
-Tras leer el ensayo de Malthus, Pierre-Fran\c{c}ois Verhulst \cite[Cap.~37,38]{haberman1998mathematical} publica un nuevo modelo basándose en el de su predecesor, pero añadiendo que la tasa de reproducción es proporcional tanto a la población existente como, además, a la cantidad de recursos disponibles, asumiendo así que existe un punto de saturación el cual significa que si la población crece mucho, entonces te quedas sin recursos para abastecerla y por tanto deja de crecer. Según esto, el modelo Logístico discreto que propone Verhulst queda de la siguiente forma:
+Tras leer el ensayo de Malthus, Pierre-Fran\c{c}ois Verhulst \cite[Cap.~37,38]{haberman1998mathematical} publica un nuevo modelo basándose en el de su predecesor, pero añadiendo que la tasa de reproducción es proporcional tanto a la población existente como, además, a la cantidad de recursos disponibles, asumiendo así que existe un punto de saturación el cual significa que si la población crece mucho, entonces se queda sin recursos para abastecerse y por tanto deja de crecer. Según esto, el modelo Logístico discreto que propone Verhulst queda de la siguiente forma:
 
 \begin{equation}
-    \displaystyle{\frac{\Delta N}{\Delta t} = (C_1 \cdot N_k) \cdot (C_2 \cdot (1-N_k)}
+    \displaystyle{\frac{\Delta N}{\Delta t} = (C_1 \cdot N_k) \cdot (C_2 \cdot (1-N_k))}
 \end{equation}
 
-\noindent que agrupando algunas de las constantes y re-escalando la unidad de medida del número de individuos se obtiene:
+\noindent que agrupando algunas de las constantes y re-escalando la unidad de medida del número de individuos puede escribirse como:
 
 \begin{equation}
     N_{k+1} = C \cdot N_k \cdot (1 - N_k)
 \end{equation}
 
-\noindent cuya solución del modelo continuo quedaría:
+\noindent Al tomar, como antes, el límite cuando $\Delta t\to 0$ se obtiene la ecuación diferencial 
+
+\begin{equation}
+    N'(t) = A \cdot N(t) \cdot (C-N(t)) = N(t) \cdot (a-b \cdot N(t))
+\end{equation}
+
+cuya solución es:
 
 \begin{equation}
     \displaystyle{N(t) = \frac{\frac{a}{b}}{1+(\frac{a-bN_0}{bN_0})e^{-at}}} 
 \end{equation}
 
-Una evolución de este modelo sería el que propone Lotka Volterra \cite[Cap.~43]{haberman1998mathematical} que lo aplica a dos sistemas coexistentes, de los cuales uno es el sistema depredador y otro es el sistema presa estando estrechamente relacionado la evolución de ambos.
+Una evolución de este modelo sería el que proponen Lotka y Volterra \cite[Cap.~43]{haberman1998mathematical} que lo aplica a un sistema con  dos especies coexistentes, de los cuales una es el  depredador y la otra, la presa, estando estrechamente relacionado la evolución de ambas.
 
 
 \subsection{Modelo de Keller-Segel} \label{s_2_2_2}
-Otro modelo matemático de importancia es el presentado por Evelyn Fox Keller y Lee A. Segel \cite{keller1970initiation, keller1971model, keller1971traveling}, que estudian el comportamiento de insectos cuyos comportamientos y movimientos los llevan a cabo de acuerdo a unos gradientes de sustancias químicas. Este modelo ha sido muy utilizado en diversos ensayos, algunos de los cuales más importantes pueden leerse en las referencias \cite{calvez2008parabolic, blanchet2008convergence, calvez2006volume, dolbeault2004optimal, blanchet2006two, corrias2006critical}.
+Otro modelo matemático de importancia es el presentado por Evelyn Fox Keller y Lee A. Segel \cite{keller1970initiation, keller1971model, keller1971traveling}, que estudian el comportamiento de insectos que se comportan de acuerdo a unos gradientes de sustancias químicas. Este modelo ha sido muy utilizado en diversos ensayos, algunos de los más importantes pueden leerse en las referencias \cite{calvez2008parabolic, blanchet2008convergence, calvez2006volume, dolbeault2004optimal, blanchet2006two, corrias2006critical}.
 
 En el libro \textit{Swarm intelligence: from natural to artificial systems}, \citeauthor{bonabeau1999swarm} estudian patrones en dos insectos diferentes: hormigas y termitas. Las primeras, utilizan la temperatura y humedad del ambiente para construir sus nidos y distribuyen sus crías en función de eso. Las segundas, por su parte, construyen la cámara real adaptándola al cuerpo de la reina y la forma y el tamaño de la cámara la define el gradiente de feromonas que desprende a su alrededor. De esta manera la reina crea una plantilla química.
 
@@ -211,7 +215,7 @@ Tomando como referencia el esquema representado en la figura \ref{fig:aokifish} 
 
 En la ecuación \ref{eq:velocityDistributionAoki} se encuentran  \(\upsilon\) como valor de la velocidad, \textit{K} y \textit{A} como parámetros constantes y mayores que cero y \(\Gamma(K)\) que es una función gamma. En la segunda ecuación (\ref{eq:directionDistributionAoki}) \(W_{j}\) es el factor que pondera la influencia que tiene cada individuo dentro de la distancia \textit{RC}. 
 
-La dirección del movimiento está pues, relacionada con la ubicación y el rumbo de los vecinos. La influencia que ejercen los individuos entre sí se define mediante la ecuación$$ W_{j+1}=RF \cdot W_{j},$$ donde \textit{RF} es una constante entre 0 y 1 definida para cada simulación. Todo esto conlleva a establecer que los individuos pueden tener tres tipos de conductas diferentes dentro del grupo en función de las distancias y las interacciones que tienen: aproximación, sorteo/evitación y orientación paralela.
+La dirección del movimiento está pues, relacionada con la ubicación y el rumbo de los vecinos. La influencia que ejercen los individuos entre sí se define mediante la ecuación$$ W_{j+1}=RF \cdot W_{j},$$ donde \textit{RF} es una constante entre 0 y 1 definida para cada simulación. Todo esto conlleva a establecer que los individuos pueden tener tres tipos de conductas diferentes dentro del grupo en función de las distancias y las interacciones que tienen: aproximación, repulsión y orientación paralela.
 
 El modelo descrito anteriormente se programó para realizar los cálculos necesarios, y se ejecutó siguiendo un algoritmo muy bien definido que se muestra en el flujo de figura \ref{fig:flowchartAoki}. Tras ejecutar su modelo numerosas veces cambiando los parámetros de entrada, llegó a la conclusión de que a lo largo de las 2000 iteraciones de cada ejecución, los individuos permanecían en grupo mostrando siempre comportamientos muy similares. 
 
@@ -241,37 +245,37 @@ En un vuelo real, los giros y movimientos ocurren de forma continua y simultáne
 
 Para que se formen las bandadas, cada individuo debe tener comportamientos que permitan la coordinación con los de sus compañeros, que en contra de lo que parece, no son totalmente aleatorios, si no que tienen movimientos comunes.
 
-Un ave puede ser consciente de tres factores: de sí mismo, sus de 5 a 7 de sus vecinos más cercanos \cite{ballerini2008interaction}\footnote{En un principio Reynolds contempla que le influye el comportamiento de sus 2 o 3 vecinos más cercanos, pero es Ballerini et al. quienes demuestran que el número de vecinos está entre 5 y 7.} y el resto de la bandada. Es por esto por lo que una bandada de pájaros no tiene límite de individuos y nunca parece estar sobrecargada ya que la cantidad de factores que un mismo ave tiene que tener en cuenta para mantenerse en la bandada es independiente del número de individuos que la integren. De esta manera, la tarea de volar siempre es igual de simple (o compleja).
+Un ave puede ser consciente de tres factores: de sí mismo, de sus vecinos más cercanos  \cite{ballerini2008interaction}\footnote{En un principio Reynolds contempla que le influye el comportamiento de sus 2 o 3 vecinos más cercanos, pero es Ballerini et al. quienes demuestran que el número de vecinos está entre 5 y 7.} y el resto de la bandada. Es por esto por lo que una bandada de pájaros no tiene límite de individuos y nunca parece estar sobrecargada ya que la cantidad de factores que un mismo ave tiene que tener en cuenta para mantenerse en la bandada es independiente del número de individuos que la integren. De esta manera, la tarea de volar siempre es igual de simple (o compleja).
 
 Aunque el vuelo en bandada descrito anteriormente resulte aparentemente sencillo, el trabajo requerido para ejecutar el algoritmo en ordenador crece como el cuadrado de la población del rebaño y definitivamente existe un límite superior en el tamaño de las bandadas simuladas implementadas.
 
-\subsection{Modelos de consenso}\label{s2_2_3}
+\subsection{Modelos de consenso}\label{s2_2_4}
 
-En un contexto en el que cada vez más se tiende a estudiar el comportamiento de los animales para dar respuesta al por qué del movimiento y comportamiento de los animales para poder simularlo e incluso contemplar la posibilidad de imitarlo en el ser humano, no es hasta 1995, cuando Vicsek realiza un estudio bastante simple basado en dos ecuaciones que veremos a continuación. Con tal de imitar la dinámica de movimiento y explicar el consenso de ciertos sistemas, define para sus partículas un impulso inicial con una velocidad absoluta constante y en cada paso de tiempo cada individuo asume la dirección promedio de sus vecinos en un radio establecido \cite{vicsek1995novel}. Basándose en estas asunciones, Vicsek es capaz de demostrar matemáticamente que las simulaciones de movimientos auto-organizados pueden llevarse a cabo.
+En un contexto en el que cada vez más se tiende a estudiar el por qué del movimiento y comportamiento de los animales para poder simularlo e incluso contemplar la posibilidad de imitarlo en el ser humano, no es hasta 1995, cuando Vicsek realiza un estudio bastante simple basado en dos ecuaciones que veremos a continuación. Con tal de imitar la dinámica de movimiento y explicar el consenso de ciertos sistemas, define para sus partículas un impulso inicial con una velocidad absoluta constante y en cada paso de tiempo cada individuo asume la dirección promedio de sus vecinos en un radio establecido \cite{vicsek1995novel}. Basándose en estas asunciones, Vicsek es capaz de demostrar matemáticamente que las simulaciones de movimientos auto-organizados pueden llevarse a cabo.
 
 Para entender matemáticamente este modelo, la posición de cada \(i\)-ésima partícula viene dada por:
 \begin{equation}\label{eq:vicsekParticlePosition}
     x_{i}(t+1)=x_{i}(t)+\mathbf{v}_{i}(t)\Delta t
 \end{equation}
- donde la velocidad de la partícula $\mathbf{v}_{i}(t+1)$ se construye para tener un valor absoluto $v$ y una dirección dada por el ángulo $\theta (t+1)$ obtenido mediante la expresión: 
+ donde la velocidad de la partícula $\mathbf{v}_{i}(t+1)$ se construye para tener un módulo $v$ y una dirección dada por el ángulo $\theta (t+1)$ obtenido mediante la expresión: 
  \begin{equation}\label{eq:vicsekParticleDirection}
-    \theta (t+1)=\langle\theta (t)\rangle _{r}+\Delta \theta
+    \theta (t+1)=\langle\theta (t)\rangle _{r}+\Theta
  \end{equation}
- donde $\langle \theta (t)\rangle _{r}$ es la dirección media de las del grupo que rodea a la partícula $i$ en un radio $r$. También en \ref{eq:vicsekParticleDirection} $\Delta \theta$ es un número aleatorio entre dos valores definidos $[-\mu /2 , \mu /2]$ que representa la perturbación por algún agente externo. 
+ donde $\langle \theta (t)\rangle _{r}$ es la dirección media de las del grupo que rodea a la partícula $i$ en un radio $r$. También en \ref{eq:vicsekParticleDirection} $\Theta$ es un número aleatorio entre dos valores definidos $[-\mu /2 , \mu /2]$ que representa la perturbación por algún agente externo. 
  
- El resto de su estudio se basa en comprobar el comportamiento que tienen las partículas en base a los dos parámetros básicos, el ruido $\mu$ y la densidad $\rho = N/L^{2}$. Modificando estos valores se da cuenta de que siempre hay consenso entre las partículas en mayor o menor medida. Para densidades y perturbaciones pequeñas, las partículas tienden a formar grupos moviéndose cada uno guardando cierta cohesión. Cuando la densidad y el ruido son muy altos todas las partículas tienden a llevar la misma dirección aunque sea aleatoria. El caso más interesante es cuando la densidad es elevada y la perturbación es baja, en cuyo caso el movimiento se lleva a cabo de manera ordenada a nivel macroscópico. 
+ El resto de su estudio se basa en comprobar el comportamiento que tienen las partículas en base a los dos parámetros básicos, el ruido $\mu$ y la densidad $\rho = N/L^{2}$, siendo $N$ el número de individuos y $L$ la longitud del lado del área cuadrada donde se encuentran. Modificando estos valores se observa que siempre hay consenso entre las partículas en mayor o menor medida. Para densidades y perturbaciones pequeñas, las partículas tienden a formar grupos moviéndose cada uno guardando cierta cohesión. Cuando la densidad y el ruido son muy altos todas las partículas tienden a llevar la misma dirección aunque sea aleatoria. El caso más interesante es cuando la densidad es elevada y la perturbación es baja, en cuyo caso el movimiento se lleva a cabo de manera ordenada a nivel macroscópico. 
  
- Un trabajo de investigación muy interesante que surge a raíz del modelo de Vicsek, es el realizado por Alethea Barbaro y un grupo de científicos y biólogos, en el cual aplica el modelo a la población de capelán islandés para reproducir la ruta de migración durante tres años diferentes, prediciendo con éxito la ruta para 2008 \cite{barbaroModellingSimulations}. El valor de este estudio radica en que en ese año predijeron que llegarían a un lugar donde nunca habían estado. Utilizando los datos de temperatura disponibles y las corrientes aproximadas, pudo reproducir las rutas migratorias observadas de los tres años anteriores \cite{barbaro2009simulations}. Primero se hizo un análisis para identificar la temperatura oceánica y el equilibrio entre la influencia de la interacción entre partículas y la respuesta de las partículas a la temperatura como los parámetros de control más significativos de cara a determinar la ruta de migración.
+ Un trabajo de investigación muy interesante que surge a raíz del modelo de Vicsek, es el realizado por Alethea Barbaro y un grupo de científicos y biólogos, en el cual se aplica el modelo a la población de capelán islandés para reproducir la ruta de migración durante tres años diferentes, prediciendo con éxito la ruta para 2008 \cite{barbaroModellingSimulations}. El valor de este estudio radica en que en ese año predijeron que llegarían a un lugar donde nunca habían estado. Utilizando los datos de temperatura disponibles y las corrientes aproximadas, pudo reproducir las rutas migratorias observadas de los tres años anteriores \cite{barbaro2009simulations}. Primero se hizo un análisis para identificar la temperatura oceánica y el equilibrio entre la influencia de la interacción entre partículas y la respuesta de las partículas a la temperatura como los parámetros de control más significativos de cara a determinar la ruta de migración.
  
- Otros dos autores que dedican gran parte de su investigación a buscar un modelo de consenso son Felipe cucker y Steve Smale.  Aunque parten de los estudios de Vicsek, la diferencia con éste es que Cucker-Smale (C-S a partir de ahora) calcula la velocidad definiendo primero el vector de posición. Esto es así debido a que en un primer momento observaron que cualquier ``rebaño'' de animales, para el ejemplo me referiré a pájaros, terminan moviéndose a la misma velocidad sea cual sea su posición inicial. \cite{cucker2007emergent}.
+ Otros dos autores que dedican gran parte de su investigación a buscar un modelo de consenso son Felipe cucker y Steve Smale.  Aunque parten de los estudios de Vicsek, la diferencia con éste es que Cucker-Smale (C-S a partir de ahora) calcula la velocidad definiendo primero el vector de posición. Esto es así debido a que en un primer momento observaron que cualquier conjunto de animales, para el ejemplo se puede considear una bandada de pájaros, terminan moviéndose a la misma velocidad sea cual sea su posición inicial. \cite{cucker2007emergent}.
  
- En este modelo, la velocidad de cada pájaro ajusta su velocidad añadiéndole una media ponderada de las diferencias de su velocidad con las de las otras aves. 
+ En este modelo, cada pájaro ajusta su velocidad añadiéndole una media ponderada de las diferencias de su velocidad con las de las otras aves. 
  
  \begin{equation}\label{eq:CSvelocidad}
      v_{i}(t+1)-v_{i}(t)=\sum_{j=1}^k a_{ij}(v_{j}(t)-v_{i}(t))
  \end{equation}
  
- Aquí, el valor del parámetro $\{a_{ij}\}$ cuantifica la manera en la que los pájaros influyen a los demás, que está relacionada con la distancia a la que se encuentran los pájaros sobre los que se ejerce esta influencia. Este valor también lo calculan mediante la ecuación 
+ Aquí, el valor del parámetro $\{a_{ij}\}$ cuantifica la manera en la que los pájaros influyen a los demás, que está relacionada con la distancia a la que se encuentran los pájaros sobre los que se ejerce esta influencia. Este valor también se calcula mediante la ecuación 
  
  \begin{equation}
      \label{eq:CSaij}
@@ -289,7 +293,7 @@ Para entender matemáticamente este modelo, la posición de cada \(i\)-ésima pa
     \right.
 \end{equation}
  
-Una de las características de este modelo es que el rebaño siempre llega a consenso sea cual sea su estado inicial, para valores de $\beta \leq 0,5$, correspondiente a una interacción a larga distancia social bastante fuerte. Por el contrario, para valores de $\beta >0.5$ el comportamiento de auto-organización se lleva a cabo bajo unas determinadas condiciones en el estado inicial, como por ejemplo, que el grupo en la posición inicial se encuentre lo más próximo al centro de masa del rebaño.
+Una de las características de este modelo es que el rebaño siempre llega a consenso sea cual sea su estado inicial, para valores de $\beta \leq 0,5$, correspondiente a una interacción a larga distancia bastante fuerte. Por el contrario, para valores de $\beta >0.5$ el comportamiento de auto-organización se lleva a cabo bajo unas determinadas condiciones en el estado inicial, como por ejemplo, que el grupo en la posición inicial se encuentre lo más próximo al centro de masa del rebaño.
 
 Para estos casos, si se quiere garantizar el consenso del grupo cuando no se cumplen estas condiciones iniciales, es necesario incluir estrategias de control al modelo, lo cual es el estudio del presente trabajo y se profundizará en el tema más adelante. 
 
@@ -311,7 +315,7 @@ En este modelo, $\alpha$ es una constante positiva y $\phi$ es la función de in
 Por tanto, en agrupaciones grandes, si se pondera correctamente la influencia que ejercen todos los individuos de manera suficientemente lenta en función de la distancia a la que se encuentren, se consigue una cohesión del grupo independientemente de la configuración inicial, evitando de esta manera que sólo influya el comportamiento del vecino más cercano y llegando al consenso de manera mucho más efectiva.
 
  \subsection{Bertozzi y D'Orsogna}
- El siguiente modelo, propuesto por los autores \citeauthor{d2006self} en \cite{d2006self}, está basado en las- interacciones de atracción-repulsión:
+ El siguiente modelo, propuesto por los autores \citeauthor{d2006self} en \cite{d2006self}, está basado en las interacciones de atracción-repulsión:
 
 \begin{equation}\label{eq:attractionRepulsion} 
     \left\lbrace
@@ -337,7 +341,7 @@ $U$ representa el comportamiento de repulsión o de atracción entre los individ
     \right.
 \end{equation}
 
-donde $C_A$, $C_R$ y $l_A$, $l_R$ representan las fuerzas y longitudes típicas de atracción y repulsión respectivamente. Al depender de estos 4 parámetros, las posibilidades de comportamiento son muy diferentes, en función de los valores que se les asignen, por ejemplo, para valores $C_R = 50$, $l_R = 2$, $C_A = 20$, $l_A = 100$, $\alpha = 0.07$ y $\beta = 0.05$, encontramos que los individuos se organizan en una especie de remolino como en \ref{fig:remolino}. Sin embargo si a estos parámetros les asignamos los valores $C_R = 50$, $l_R = 20$, $C_A = 100$, $l_A = 100$, $\alpha = 0.15$ y $\beta = 0.05$ el resultado es que los individuos igualmente terminan formando un remolino, pero algunos de ellos en dirección a las agujas del reloj, mientras que otros, en sentido contrario. 
+donde $C_A$, $C_R$ y $l_A$, $l_R$ representan las fuerzas y longitudes típicas de atracción y repulsión respectivamente. Al depender de estos 4 parámetros, las posibilidades de comportamiento son muy diferentes, en función de los valores que se les asignen. Por ejemplo, para valores\linebreak $C_R = 50$, $l_R = 2$, $C_A = 20$, $l_A = 100$, $\alpha = 0.07$ y $\beta = 0.05$, se ve que los individuos se organizan en una especie de remolino como en la figura \ref{fig:remolino}. Sin embargo si a estos parámetros les asignamos los valores $C_R = 50$, $l_R = 20$, $C_A = 100$, $l_A = 100$, $\alpha = 0.15$ y $\beta = 0.05$ el resultado es que los individuos igualmente terminan formando un remolino, pero algunos de ellos en dirección a las agujas del reloj, mientras que otros, en sentido contrario. 
 
 \begin{figure}[!ht]
 \centering

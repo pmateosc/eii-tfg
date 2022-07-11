@@ -52,6 +52,7 @@ Para comprender mejor la manera en la que se genera la posición y velocidad ini
 \end{enumerate}
 
 \begin{table}[!h]
+\caption{Generación de números aleatorios}
     \begin{center}
         \begin{tabular}{| c | c | c | c |}
             \hline
@@ -62,11 +63,11 @@ Para comprender mejor la manera en la que se genera la posición y velocidad ini
             ... & ... & ... & ... \\
             \hline
         \end{tabular}
-        \caption{Generación de números aleatorios}
         \label{tab:XVi1}
     \end{center}
 \end{table}
 \begin{table}[!h]
+\caption{Generación de los componentes $x$ e $y$ del vector velocidad}
     \begin{center}
         \begin{tabular}{| c | c | c | c |}
             \hline
@@ -77,7 +78,6 @@ Para comprender mejor la manera en la que se genera la posición y velocidad ini
             ... & ... & ... & ... \\
             \hline
         \end{tabular}
-        \caption{Generación de los componentes $x$ e $y$ del vector velocidad}
         \label{tab:XVi2}
     \end{center}
 \end{table}
@@ -95,9 +95,9 @@ El comportamiento de este vector velocidad será el objeto de nuestro estudio en
 En cada iteración pasa lo siguiente:
 \begin{itemize}
     \item Se provee a cada modelo de una matriz de 20x4 con las posiciones y velocidades de todos los elementos (ver código fuente \ref{src:comparativa} 1-37).
-    \item A esos datos se les aplica el modelo de consenso correspondiente. Las funcionen desarrolladas pueden verse en los anexos \ref{src:cs0}, \ref{src:cs_arbor}, \ref{src:cs_trelat1}, \ref{src:cs_trelat2}
+    \item A esos datos se les aplica el modelo de consenso correspondiente. Las funcionen desarrolladas pueden verse en los anexos \ref{src:cs0}, \ref{src:csarbor}, \ref{src:cstrelat1}, \ref{src:cstrelat2}
     \item El modelo devuelve otra matriz 20x4 con los datos modificados (\ref{src:comparativa} 34-37, 50-53)
-    \item Se guarda en una lista las diferencias de velocidades en cada iteración en cada modelo. (\ref{src:comparativa} 61, \ref{src:max_dif})
+    \item Se guarda en una lista las diferencias de velocidades en cada iteración en cada modelo. (\ref{src:comparativa} 61, \ref{src:maxdif})
     \item Se representan las nuevas posiciones y velocidades de los 20 individuos en las n gráficas diferentes de los modelos a comparar(\ref{src:comparativa} 64-95)
 \end{itemize}
 
@@ -116,7 +116,7 @@ Aunque visualmente en las pruebas se puede ver cómo los vectores poco a poco ti
 
 \begin{equation}\label{eq:vmax}
     \begin{array}{l}
-        v_{max} = \displaystyle{max(\|v_{i}-\frac{1}{N}\sum_{j=0}^{N}\vec{v_{j}}\|)}
+        v_{max} = \displaystyle{\max\left(\|v_{i}-\frac{1}{N}\sum_{j=0}^{N}\vec{v_{j}}\|\right)}
     \end{array}
     \begin{array}{r}
         (i= 0, ..., N)
@@ -174,7 +174,7 @@ Se han realizado adicionalmente varias ejecuciones, cada una con diferentes tiem
 \label{fig:CS075_vel}
 \end{figure}
 
-Otra simulación que se ha hecho es minimizar la diferencia de los vectores velocidad de todos los miembros para generar una condición bajo la cual se llegue al consenso con un $\beta > 0.75$ (figura \ref{fig:CS075_consenso}) pudiéndose observar y analizar desde dos puntos de vista. Por una parte, en la figura \ref{fig:CS075_consenso} se muestra que cuando la diferencia de estos vectores es suficientemente pequeña ($\pm 30^o$ en la dirección de los vectores), se llega al consenso. 
+Otra simulación que se ha hecho es minimizar la diferencia de los vectores velocidad de todos los miembros para generar una condición bajo la cual se llegue al consenso con un \linebreak $\beta > 0.75$ (figura \ref{fig:CS075_consenso}) pudiéndose observar y analizar desde dos puntos de vista. Por una parte, en la figura \ref{fig:CS075_consenso} se muestra que cuando la diferencia de estos vectores es suficientemente pequeña ($\pm 30^o$ en la dirección de los vectores), se llega al consenso. 
 
 Por otra parte, teniendo en cuenta la figura \ref{fig:CS075_comparacion_consenso} también se puede observar cómo a medida que aumenta la diferencia inicial de estos vectores, el estado de consenso tarda más en producirse, hasta llegar a un punto en el que la diferencia es demasiado grande como para que se pueda producir la alineación del vector velocidad en un tiempo finito en el que pueda realizarse la simulación.
 
@@ -186,15 +186,15 @@ Por otra parte, teniendo en cuenta la figura \ref{fig:CS075_comparacion_consenso
 \label{fig:CS075_consenso}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=\textwidth]{fig/cap04/2CSB075/consenso/todas.png}
     \caption{Comparación del comportamiento con respecto a la diferencia inicial cuando $\beta > 0.5$}
     \label{fig:CS075_comparacion_consenso}
 \end{figure}
 
-\newpage
-\clearpage
+%\newpage
+%\clearpage
 
 \section{Aplicación de controles al modelo general de Cucker-Smale} \label{s4_4}
 
@@ -231,7 +231,7 @@ Con estos datos se pretende obtener una gráfica que pueda comparar a qué veloc
 \centering
     \subcaptionbox{Velocidad de consenso}{\includegraphics[height=5cm]{fig/cap04/3ALLB025/vel_consenso.png}}
     \subcaptionbox{Velocidad de consenso final ampliada}{\includegraphics[height=5cm]{fig/cap04/3ALLB025/vel_consenso_ampliada.png}}
-\caption{Comparación de la velocidad a la que se adquiere el consenso.} 
+\caption{Comparación de la velocidad a la que se adquiere el consenso con $\beta = 0.25$.} 
 \label{fig:consenso_4models}
 \end{figure}
 
@@ -257,11 +257,12 @@ Si concluimos esta prueba configurando una $\beta=0.75$ y $t=120s$ entonces obte
 
 \subsection{Comparación entre ejecuciones}
 
-Para concluir que los resultados obtenidos anteriormente no son objetos del azar y de una configuración específica del estado inicial del grupo, es necesario repetir esas pruebas una cantidad suficiente de veces cambiando las condiciones iniciales para obtener una media de datos que corroboren lo anterior.
+Para descartar que los resultados obtenidos anteriormente sean objeto del azar y de una configuración específica del estado inicial del grupo, es necesario repetir esas pruebas una cantidad suficiente de veces cambiando las condiciones iniciales para obtener una media de datos que corroboren lo anterior.
 
-Para ello se ha decidido comparar el momento en el que se llega al consenso partiendo de 500 posiciones iniciales diferentes. Es necesario aclarar en este punto, que al igual que en la sección anterior, se ha tomado la decisión de definir el momento en el que se considera que el grupo ha llegado al consenso, cuando la diferencia del módulo del vector más alejado con respecto a la media de la dirección del grupo, es igual o menor que 0.01, es decir, $||v_{max}||$.
+Para ello se ha decidido comparar el momento en el que se llega al consenso partiendo de 500 posiciones iniciales diferentes. Es necesario aclarar en este punto, que al igual que en la sección anterior, se ha tomado la decisión de definir el momento en el que se considera que el grupo ha llegado al consenso, cuando la diferencia del módulo del vector más alejado con respecto a la media de la dirección del grupo, es igual o menor que $0.01$, es decir, $||v_{max}||$.
 
 \begin{table}[!ht]
+\caption{Tiempos de consenso en 500 ejecuciones con $\beta=0.25$ y $t=20s$}
     \centering
     \begin{tabular}{|l|l|l|l|l|}
     \hline
@@ -283,7 +284,6 @@ Para ello se ha decidido comparar el momento en el que se llega al consenso part
         500 & 15,2 & 11,7 & 7,8 & 11,4 \\ \hline \hline
         \textbf{Promedio} & \textbf{14,4586} & \textbf{10,8066} & \textbf{7,6586} & \textbf{11,7518} \\ \hline
     \end{tabular}
-    \caption{Tiempos de consenso en 500 ejecuciones con $\beta=0.25$ y $t=20s$}
     \label{tab:tiemposConsenso}
 \end{table}
 
@@ -292,6 +292,7 @@ En la tabla \ref{tab:tiemposConsenso} se han cortado algunos resultados pero se 
 Se ha repetido el proceso anterior, llevando a cabo  500 repeticiones de la simulación, fijando el valor del parámetro $\beta$ en  $\beta=0.5$. En este caso ha sido necesario ampliar el tiempo de ejecución a $t=60s$. En este caso es curioso observar cómo por un lado el modelo de Cucker Smale sin aplicarle ningún control sólo consigue el consenso del grupo en 2 ocasiones mientras que el primer modelo de Trélat si que lo consigue en todas las ejecuciones. En la tabla \ref{tab:tiemposConsensoB05} se muestran algunos de los resultados obtenidos en esta prueba, entre los que se encuentran los más característicos:
 
 \begin{table}[!h]
+\caption{Tiempos de consenso en 500 ejecuciones con $\beta=0.5$ y $t=60s$}
     \centering
     \begin{tabular}{|l|l|l|l|l|}
     \hline
@@ -320,7 +321,6 @@ Se ha repetido el proceso anterior, llevando a cabo  500 repeticiones de la simu
         500 & 60 & 60 & \cellcolor{green!15}8,8 & \cellcolor{green!15}41,3 \\ \hline \hline
         \textbf{Total} & \textbf{2} & \textbf{3} & \textbf{500} & \textbf{493} \\ \hline
     \end{tabular}
-    \caption{Tiempos de consenso en 500 ejecuciones con $\beta=0.5$ y $t=60s$}
     \label{tab:tiemposConsensoB05}
 \end{table}
 
